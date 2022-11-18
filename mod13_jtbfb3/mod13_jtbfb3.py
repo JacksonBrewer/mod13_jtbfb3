@@ -64,7 +64,7 @@ def select_time_series():
     # }
 
     # List of choices (so choice is accessible via index)
-    time_choices = ["TIME_SERIES_INTRADAY", "TIME_SERIES_DAILY", "TIME_SERIES_WEEKLY", "TIME_SERIES_MONTHLY"]
+    time_choices = ["TIME_SERIES_INTRADAY", "TIME_SERIES_DAILY_ADJUSTED", "TIME_SERIES_WEEKLY", "TIME_SERIES_MONTHLY"]
 
     time_selection = ""
     time_series_selection = ""
@@ -167,7 +167,7 @@ def parse_json(request_url, date_range, time_series):
     if time_series[0] == "TIME_SERIES_INTRADAY":
         # Time Series (5min)
         data_title = "Time Series ({})".format(time_series[1])
-    elif time_series[0] == "TIME_SERIES_DAILY":
+    elif time_series[0] == "TIME_SERIES_DAILY_ADJUSTED":
         data_title = "Time Series (Daily)"
     elif time_series[0] == "TIME_SERIES_WEEKLY":
         data_title = "Weekly Time Series"
